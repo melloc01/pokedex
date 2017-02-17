@@ -14,8 +14,8 @@ export const FETCH_POKEMONS = 'FETCH_POKEMONS'
  * Fetches all pokemon.
  * @returns {object} The action created.
  */
-export function fetchPokemons (page = 0) {
-  const offset = PER_PAGE * page
+export function fetchPokemons (page = 1) {
+  const offset = PER_PAGE * (page - 1)
   const url = `${ROOT_URL}/pokemon?limit=${PER_PAGE}&offset=${offset}`
   const promise = axios.get(url)
 
